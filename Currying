@@ -1,0 +1,44 @@
+//call
+var Student={age:20}
+var addno=function(){
+return this.age
+}
+console.log(addno.call(Student));
+
+
+//apply
+var Student={age:20}
+var addno=function(){
+return this.age
+}
+console.log(addno.apply(Student));
+
+//bind
+var Student={age:20}
+var addno=function(){
+return this.age
+}
+var bound=addno.bind(Student)
+console.log(bound(this.age));
+
+//using bind
+let multiply=function(x,y)
+{
+console.log(x*y)
+}
+ let multiplytwo=multiply.bind(this,4)
+ multiplytwo(2)
+
+
+
+
+//using function closure
+let multiply=function(x)
+{
+    return function(y)
+    {
+        console.log(x*y)
+    }
+}  
+let multiplytwo=multiply(2)
+multiplytwo(3)
